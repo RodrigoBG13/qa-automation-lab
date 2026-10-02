@@ -1,0 +1,39 @@
+name: QA Automation Pipeline
+
+# Quando esse robô vai acordar? Quando tiver push ou PR na branch main!
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Baixando o Código
+      uses: actions/checkout@v4
+
+    - name: ⚙️ Configurando o Node.js v24
+      uses: actions/setup-node@v4
+      with:
+        node-version: 24
+
+    - name: 📦 Instalando Dependências
+      run: npm ci
+
+    - name: 🤖 Instalando Navegadores do Playwright
+      run: npx playwright install --with-deps
+
+    - name: 🚀 Executando Testes BDD (Cucumber)
+      run: npx cucumber-js
+
+    - name: 📊 Salvando o Relatório HTML (Loot)
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: cucumber-report
+        path: cucumber-report.html
+        retention-days: 15
