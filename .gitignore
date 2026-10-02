@@ -12,3 +12,7 @@ playwright/.cache/
 
 # Lixo do SO
 .DS_Store
+
+# Arquivos gerados localmente
+cucumber-report.html
+database.sqlite
