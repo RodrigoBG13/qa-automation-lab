@@ -1,0 +1,14 @@
+# Dependências do Node
+node_modules/
+
+# Relatórios e logs do Playwright
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Variáveis de ambiente
+.env
+
+# Lixo do SO
+.DS_Store
