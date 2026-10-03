@@ -1,3 +1,4 @@
+@api
 Feature: User API Validation
   As a QA Engineer
   I want to send direct requests to the API

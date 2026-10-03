@@ -1,3 +1,4 @@
+@database
 Feature: Database Core Validation
   As a QA Engineer
   I want to query the database directly

@@ -22,4 +22,11 @@ export class LoginPage {
     // A validação de ouro: se logou, a URL tem que mudar pro inventário
     await expect(this.page).toHaveURL(/.*inventory.html/);
   }
+
+  async verifyErrorMessage(expectedMessage: string) {
+    // Verifies if the error message is displayed and matches the expected text
+    const errorLocator = this.page.locator('[data-test="error"]');
+    await expect(errorLocator).toBeVisible();
+    await expect(errorLocator).toHaveText(expectedMessage);
+  }
 }

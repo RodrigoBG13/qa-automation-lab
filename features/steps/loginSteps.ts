@@ -15,3 +15,13 @@ Then('I should be redirected to the inventory page', async function () {
   const loginPage = new LoginPage(this.page);
   await loginPage.verifyLoginSuccess();
 });
+
+When('I login with invalid credentials {string} and {string}', async function (username, password) {
+  const loginPage = new LoginPage(this.page);
+  await loginPage.login(username, password);
+});
+
+Then('I should see an error message {string}', async function (errorMessage) {
+  const loginPage = new LoginPage(this.page);
+  await loginPage.verifyErrorMessage(errorMessage);
+});
