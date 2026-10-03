@@ -1,5 +1,6 @@
 # 🧪 E-commerce QA Automation Lab
 
+[![QA Automation Pipeline](https://github.com/RodrigoBG13/qa-automation-lab/actions/workflows/playwright.yml/badge.svg)](https://github.com/RodrigoBG13/qa-automation-lab/actions/workflows/playwright.yml)
 ![Playwright](https://img.shields.io/badge/Playwright-45ba4b?style=for-the-badge&logo=Playwright&logoColor=white)
 ![Cucumber](https://img.shields.io/badge/Cucumber-23D96C?style=for-the-badge&logo=cucumber&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
@@ -14,6 +15,23 @@ This lab was created to demonstrate a full-stack QA approach. It doesn't just te
 - **API Testing:** Direct endpoint validation using Playwright's `APIRequestContext`.
 - **Database Testing:** SQL queries validation to guarantee data integrity.
 - **CI/CD:** Automated pipeline with GitHub Actions.
+
+## 🗺️ Test Scenarios Coverage
+
+Here is a quick overview of what is currently being validated:
+
+```text
+UI (@ui)
+├── Successful authentication (Happy Path)
+└── Locked out user authentication (Sad Path)
+
+API (@api)
+├── GET: Retrieve an existing user
+└── POST: Create a new user
+
+Database (@database)
+└── Validate persisted user data integrity
+```
 
 ## ⚙️ How to run locally
 
