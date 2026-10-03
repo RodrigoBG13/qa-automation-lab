@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "cucumber-js",
-    "test:ui": "cucumber-js features/login.feature",
-    "test:api": "cucumber-js features/api.feature",
-    "test:db": "cucumber-js features/database.feature",
+    "test:ui": "cucumber-js --tags '@ui'",
+    "test:api": "cucumber-js --tags '@api'",
+    "test:db": "cucumber-js --tags '@database'",
     "test:html": "cucumber-js --format html:cucumber-report.html"
   },
   "keywords": [],
