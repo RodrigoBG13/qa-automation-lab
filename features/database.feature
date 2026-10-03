@@ -1,5 +1,5 @@
 Feature: Database Core Validation
-  As a QA Hacker
+  As a QA Engineer
   I want to query the database directly
   So I can guarantee the data integrity behind the scenes
 
