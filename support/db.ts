@@ -25,6 +25,10 @@ export async function seedDb() {
   // Limpa a tabela pra não acumular lixo a cada teste
   await db.exec('DELETE FROM users;');
   
-  // Insere um dado pra brincar
+  // Insere um dado pra testar a API ("seed")
   await db.run('INSERT INTO users (name, job) VALUES ("Rody", "QA Automation Engineer");');
+
+  // Fecha a conexão com o banco
+  await db.close();
+
 }

@@ -12,6 +12,9 @@ When('I query the database for the user {string}', async function (name) {
   const db = await getDbConnection();
   // O "?" é pra evitar SQL Injection! O SQLite substitui de forma segura.
   queryResult = await db.get('SELECT * FROM users WHERE name = ?', [name]);
+
+  // Fecha a conexão com o banco depois de usar
+  await db.close();
 });
 
 Then('the database should return the job {string}', async function (expectedJob) {

@@ -1,10 +1,17 @@
-import { Given, Then } from '@cucumber/cucumber';
+import { Given, Then, After } from '@cucumber/cucumber';
 import { request, APIRequestContext, expect } from '@playwright/test';
 
 // Variáveis pra guardar nossa sessão e as respostas do servidor
 let apiContext: APIRequestContext;
 let apiResponse: any;
 let responseBody: any;
+
+// Garbage Collector. Terminou o cenário, destroi o contexto da API pra liberar a RAM.
+After(async function () {
+  if (apiContext) {
+    await apiContext.dispose();
+  }
+});
 
 Given('I send a GET request to {string}', async function (endpoint) {
   // Inicializa o motor de API do Playwright apontando pro alvo
